@@ -17,7 +17,7 @@ final class AwaitingShipmentController
         $production = [
 
          
-            $productionDAO -> getAllAwaitingShipmentTarja(),
+            $productionDAO -> getAllAwaitingShipmentChip(),
  
 
         ];

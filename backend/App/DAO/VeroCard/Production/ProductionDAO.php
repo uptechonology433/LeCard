@@ -14,7 +14,7 @@ class ProductionDAO extends Connection
     public function getAllProductsInProduction(): array
     {
         $products = $this->pdo
-            ->query("SELECT * FROM view_truckpag_production_tarja;")
+            ->query("SELECT * FROM view_lecard_production_chip;")
             ->fetchAll(\PDO::FETCH_ASSOC);
 
         foreach ($products as &$product) {

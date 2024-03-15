@@ -5,6 +5,7 @@ import { Context } from '../../AuthContext/AuthContext';
 import { isValidEmail } from "../../utils/Validation";
 import Swal from 'sweetalert2';
 
+
 const PageLoguin: React.FC = () => {
 
     const { handleLogin }: any = useContext(Context);
@@ -101,12 +102,10 @@ const PageLoguin: React.FC = () => {
 
                     <div className="container-logos">
                         <div className="image-logo-client-red">
-                            <img src='https://www.truckpag.com.br/img/LOGOTIPO-GRUPO-FOOTER-TRUCKPAG.svg' alt="Logo up" />
+                            <img src='https://media.licdn.com/dms/image/D4D0BAQERm2lyzXEaPw/company-logo_200_200/0/1665748946738?e=2147483647&v=beta&t=7TjsKFDnKe0RRuuxdHv5CrT8Z_qQ8vNtN6_835S2U54' alt="Logo up" />
 
                         </div>
-                        <div className="image-logo-up">
-                            <img src='https://firebasestorage.googleapis.com/v0/b/project-vero-card-up.appspot.com/o/LogoUP.svg?alt=media&token=a4d9e086-9cc7-4d6d-846d-875f2858b698' alt="Logo up" />
-                        </div>
+                        
                     </div>
 
                     <h1>Entrar</h1>

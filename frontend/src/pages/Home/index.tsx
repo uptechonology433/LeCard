@@ -105,10 +105,6 @@ const PageHome: React.FC = () => {
         {
             name : 'Empresa',
             selector: (row: any) => row.empresa
-        },
-        {
-            name : 'Rastreio',
-            selector: (row: any) => row.rastreio
         }
        
     ];

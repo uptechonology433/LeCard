@@ -11,10 +11,10 @@ class AwaitingShipmentDAO extends Connection{
         parent::__construct();
     }
 
-    public function getAllAwaitingShipmentTarja() : array {
+    public function getAllAwaitingShipmentChip() : array {
 
         $productsAwaitingShipment = $this -> pdo
-            ->query("SELECT * FROM view_truckpag_AwaitingShipment_tarja;")
+            ->query("SELECT * FROM view_lecard_AwaitingShipment_chip;")
             ->fetchAll(\PDO::FETCH_ASSOC);
 
             foreach ($productsAwaitingShipment as &$product) {

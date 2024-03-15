@@ -13,10 +13,10 @@ class AwaitingReleaseDAO extends Connection{
 
 
     
-    public function getAllAwaitingReleaseTarja() : array {
+    public function getAllAwaitingReleaseChip() : array {
 
         $productsAwaitingRelease = $this -> pdo
-            ->query("SELECT  * FROM view_truckpag_awaitingRelease_tarja")
+            ->query("SELECT  * FROM view_lecard_awaitingRelease_chip")
             ->fetchAll(\PDO::FETCH_ASSOC);
 
             foreach ($productsAwaitingRelease as &$product) {
