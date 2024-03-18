@@ -15,7 +15,7 @@ class UsersDAO extends Connection
     public function getUserbyEmail(string $email) : ?UsersModel
     {
         $statement = $this->pdo
-            ->prepare('SELECT id ,nome, email, senha , admin FROM usuarios_truck_pag WHERE email = :email;');
+            ->prepare('SELECT id ,nome, email, senha , admin FROM usuarios_lecard WHERE email = :email;');
 
         $statement->bindParam('email', $email);
 

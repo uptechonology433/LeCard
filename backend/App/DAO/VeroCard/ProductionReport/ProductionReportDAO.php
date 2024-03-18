@@ -21,9 +21,8 @@ class ProductionReportDAO extends Connection
          to_char(dt_processamento, 'DD/MM/YYYY') AS dt_processamento, 
          to_char(dt_expedicao, 'DD/MM/YYYY') AS dt_expedicao,
          nome_arquivo_proc,
-         rastreio, 
-         nome_cliente,
-        total_cartoes, status from view_truckpag_producao_tarja WHERE nome_arquivo_proc = :arquivo");
+         empresa,
+        total_cartoes, status from view_lecard_producao_chip WHERE nome_arquivo_proc = :arquivo");
 
         $statement->execute(['arquivo' => $productionReportModel->getFile()]);
 
@@ -40,9 +39,8 @@ class ProductionReportDAO extends Connection
          to_char(dt_processamento, 'DD/MM/YYYY') AS dt_processamento, 
          to_char(dt_expedicao, 'DD/MM/YYYY') AS dt_expedicao,
          nome_arquivo_proc,
-         rastreio, 
-         nome_cliente,
-        total_cartoes, status from view_truckpag_producao_tarja where dt_processamento BETWEEN :datainicial AND :datafinal ;");
+         empresa,
+        total_cartoes, status from view_lecard_producao_chip where dt_processamento BETWEEN :datainicial AND :datafinal ;");
 
         $statement->execute(['datainicial' => $productionReportModel->getInitialProcessinDate(), 'datafinal' => $productionReportModel->getFinalProcessinDate()]);
 
@@ -58,9 +56,8 @@ class ProductionReportDAO extends Connection
          to_char(dt_processamento, 'DD/MM/YYYY') AS dt_processamento, 
          to_char(dt_expedicao, 'DD/MM/YYYY') AS dt_expedicao,
          nome_arquivo_proc,
-         rastreio, 
-         nome_cliente,
-        total_cartoes, status from view_truckpag_producao_tarja where dt_expedicao BETWEEN :expedicaoinicial AND :expedicaofinal ;");
+         empresa,
+        total_cartoes, status from view_lecard_producao_chip where dt_expedicao BETWEEN :expedicaoinicial AND :expedicaofinal ;");
 
         $statement->execute(['expedicaoinicial' => $productionReportModel->getInitialShippingdate(), 'expedicaofinal' => $productionReportModel->getFinalShippingdate()]);
 
@@ -78,9 +75,8 @@ class ProductionReportDAO extends Connection
          to_char(dt_processamento, 'DD/MM/YYYY') AS dt_processamento, 
          to_char(dt_expedicao, 'DD/MM/YYYY') AS dt_expedicao,
          nome_arquivo_proc,
-         rastreio, 
-         nome_cliente,
-        total_cartoes, status from view_truckpag_producao_tarja WHERE nome_arquivo_proc = :arquivo");
+         empresa,
+        total_cartoes, status from view_lecad_producao_chip WHERE nome_arquivo_proc = :arquivo");
 
         $statement->execute(['arquivo' => $productionReportModel->getFile()]);
 

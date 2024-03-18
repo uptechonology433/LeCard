@@ -34,7 +34,7 @@ const PageProductionReport: React.FC = () => {
 
         FinalShippingDate: "",
 
-        cardType: "Tarja"
+        cardType: "Chip"
 
     });
 
@@ -77,12 +77,9 @@ const PageProductionReport: React.FC = () => {
         },
         {
             name: 'Empresa',
-            selector: (row: any) => row.nome_cliente
+            selector: (row: any) => row.empresa
         },
-        {
-            name: 'Rastreio',
-            selector: (row: any) => row.rastreio
-        },
+      
 
        
        
@@ -92,7 +89,7 @@ const PageProductionReport: React.FC = () => {
 
     const ProductionReportRequests = async () => {
 
-        if (formValues.cardType === 'Tarja') {
+        if (formValues.cardType === 'Chip') {
 
             if (formValues.InitialProcessingDate < formValues.FinalProcessingDate
                 || formValues.InitialShippingDate < formValues.FinalShippingDate
@@ -168,7 +165,7 @@ const PageProductionReport: React.FC = () => {
 
                         <Select info={"Selecione o tipo de cartão:"} name="cardType" onChange={handleChange}>
 
-                            <option value="Tarja">Tarja</option>
+                            <option value="Chip">Chip</option>
 
                        
 
@@ -223,7 +220,7 @@ const PageProductionReport: React.FC = () => {
                                     <td>Data de expedição</td>
                                     <td>Total de cartões</td>
                                     <td>Status</td>
-                                    <td>Rastreio</td>
+                                    <td>Empresa</td>
                                 </tr>
 
 
@@ -236,7 +233,8 @@ const PageProductionReport: React.FC = () => {
                                             <td>{data.dt_expedicao}</td>
                                             <td>{data.total_cartoes}</td>
                                             <td>{data.status}</td>
-                                            <td>{data.rastreio}</td>
+                                            <td>{data.empresa}</td>
+
                                         </tr>
                                     )
                                 }
