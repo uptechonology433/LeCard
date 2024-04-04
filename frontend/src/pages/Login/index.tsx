@@ -86,7 +86,7 @@ const PageLoguin: React.FC = () => {
 
                     <div className="container-logos">
                         <div className="image-logo-client-red">
-                            <img src='https://www.sincades.com.br/img/parceiro/arquivo/44/principal?v=723' alt="Logo up" />
+                            <a href="https://lecard.com.br/"><img src='https://lecard.com.br/wp-content/uploads/2022/10/lecard_site_elementos-1.png' alt="Logo up" /></a>
 
                         </div>
                         

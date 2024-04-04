@@ -9,7 +9,7 @@
   } 
 
 header {
-    background-color: #FEC200;
+    background-color: $color-faint-gray;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +45,7 @@ header {
         justify-content: space-between;
 
         .icon {
-            color: $color-white;
+            color: $color-black;
             font-size: 35px;
             cursor: pointer;
             display: none;
@@ -73,7 +73,7 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: $color-white;
+                    color: $color-black;
                 }
             } 
         }
@@ -111,7 +111,7 @@ header {
             justify-content: right;
 
             .icon {
-                color: $color-white;
+                color: $color-black;
                 font-size: 35px;
                 cursor: pointer;
 
@@ -121,7 +121,7 @@ header {
 
         .nav-list{
             .icon{
-                color: $color-white;
+                color: $color-black;
                 font-size: 27px;
             }
         }
@@ -140,7 +140,7 @@ header {
 
                 a {
                     text-decoration: none;
-                    color: $color-white;
+                    color: $color-black;
                 }
             }
         }
