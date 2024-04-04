@@ -156,7 +156,7 @@ const PageUsers: React.FC = () => {
                             <tr>
                                 <td>Nome</td>
                                 <td>Email</td>
-                                <td>Senha</td>
+                              
                                 <td>Adm</td>
                                 <td>Deletar</td>
                                 <td>Editar</td>
@@ -172,7 +172,6 @@ const PageUsers: React.FC = () => {
 
                                         <td>{user.email}</td>
 
-                                        <td>{user.senha}</td>
 
                                         <td>{user.admin == '0' ? 'NÃO' : 'SIM'}</td>
 

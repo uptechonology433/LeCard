@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import api from "../../connectionAPI";
 import { useNavigate } from 'react-router-dom';
@@ -43,41 +44,42 @@ export function useAuth() {
 
     }, [])
 
-    const handleLogin = async (email?: string, senha?: string) => {
+    const handleLogin = async (nome?: string, senha?: string) => { // Alterado o parâmetro email para username
         await api.post('/login', {
-            email: email,
+            name: nome, // Alterado para enviar o nome de usuário
             senha: senha
         }).then((data) => {
-
+    
             if (!data.data.token)
                 return;
-
+    
             if(data.data.admin == 1){
                 setAuthenticatedAdmin(true)
             }else{
                 setAuthenticatedAdmin(false)
             }
-
+    
             localStorage.setItem('token', JSON.stringify(data.data.token));
-
+    
             api.defaults.headers.Authorization = `Bearer ${data.data.token}`;
-
+    
             setAuthenticated(true);
-
+    
             navigate(`${process.env.PUBLIC_URL}/home`);
-
+    
         }).catch((error) => {
           
             console.log(error)
             Swal.fire({
                 icon: 'error',
-                title: 'Login invalido...',
-                text: 'Email ou senha incorretos, verifique os dados e tente novamente.'
+                title: 'Login inválido...',
+                text: 'Nome de usuário ou senha incorretos, verifique os dados e tente novamente.' // Alterado para "Nome de usuário"
             });
-
-
+    
+    
         });
     }
+    
 
     function handleLogout() {
 

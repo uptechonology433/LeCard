@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import Input from "../../components/shared/Input";
 import Button from "../../components/shared/Button";
 import { Context } from '../../AuthContext/AuthContext';
-import { isValidEmail } from "../../utils/Validation";
 import Swal from 'sweetalert2';
 
 
@@ -10,27 +9,12 @@ const PageLoguin: React.FC = () => {
 
     const { handleLogin }: any = useContext(Context);
 
-    const [emailVerification, setEmailVerification] = useState(true);
-
     const [passwordVerification, setPasswordVerification] = useState(true);
 
-    const [emailUserInput, setEmailUserInput] = useState('');
+    const [usernameInput, setUsernameInput] = useState('');
 
     const [passwordUserInput, setPasswordUserInput] = useState('');
 
-    const ValidateEmail = () => {
-
-        if (!isValidEmail(emailUserInput)) {
-
-            setEmailVerification(false);
-
-            return false
-        }
-
-        setEmailVerification(true);
-
-        return true;
-    }
 
     const ValidatePassword = () => {
 
@@ -48,7 +32,7 @@ const PageLoguin: React.FC = () => {
 
     const isValidationLogin = () => {
 
-        if (!emailUserInput || !passwordUserInput) {
+        if (!passwordUserInput) {
             Swal.fire({
                 icon: 'error',
                 title: 'Campos vazios...',
@@ -58,7 +42,7 @@ const PageLoguin: React.FC = () => {
             return false;
         }
 
-        if (!ValidateEmail() || !ValidatePassword())
+        if (!ValidatePassword())
             return false;
 
         return true;
@@ -71,7 +55,7 @@ const PageLoguin: React.FC = () => {
             if (!isValidationLogin())
                 return;
 
-            handleLogin(emailUserInput, passwordUserInput);
+            handleLogin(usernameInput, passwordUserInput);
 
         }
     }
@@ -115,10 +99,8 @@ const PageLoguin: React.FC = () => {
                     <div className="container-inputs-login">
 
                         <div className="input-name-user">
-                            <Input placeholder="Email..." onKeyUp={onConfirmButtonPress} info="Email:" value={emailUserInput} onChange={(text: any) => setEmailUserInput(text.target.value)} validate={() => ValidateEmail()} />
-                            <div className="message-error-verification">
-                                {!emailVerification ? <p>O e-mail inserido não é valido.</p> : null}
-                            </div>
+                            <Input placeholder="Nome de usuário..." onKeyUp={onConfirmButtonPress} info="Nome de usuário:" value={usernameInput} onChange={(text: any) => setUsernameInput(text.target.value)}/>
+
 
                         </div>
 
@@ -138,8 +120,7 @@ const PageLoguin: React.FC = () => {
 
                     </div>
                 </div>
-            </div>
-            <footer><p>Copyright 2023 © | Up Technology by Rebeca Lopes</p></footer>
+            </div><footer><p>Copyright 2023 © | Up Technology by Rebeca Lopes</p></footer>
 
         </div>
     )
