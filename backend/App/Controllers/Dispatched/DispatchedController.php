@@ -8,24 +8,15 @@ use Slim\Http\Response as Response;
 
 final class DispatchedController
 {   
-    
     public function Dispatched(Request $request, Response $response, array $args): Response
     {
-        
         $productionDAO = new DispatchedDAO();
-        
-        $production = [
-
-          
-            $productionDAO -> getAllDispatchedChip(),
-         
-
-        ];
+        $production = $productionDAO->getAllDispatchedChip();
 
         
-        $response = $response -> withJson($production);
+        $response = $response->withJson($production);
 
         return $response;
-    
     }
 }
+

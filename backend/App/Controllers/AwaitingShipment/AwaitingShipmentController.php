@@ -8,24 +8,15 @@ use Slim\Http\Response as Response;
 
 final class AwaitingShipmentController
 {   
-    
     public function AwaitingShipment(Request $request, Response $response, array $args): Response
     {
-        
         $productionDAO = new AwaitingShipmentDAO();
-        
-        $production = [
+        $production = $productionDAO->getAllAwaitingShipmentChip();
 
-         
-            $productionDAO -> getAllAwaitingShipmentChip(),
- 
-
-        ];
-
-        
-        $response = $response -> withJson($production);
+        // Remove the extra array brackets here
+        $response = $response->withJson($production);
 
         return $response;
-    
     }
+
 }

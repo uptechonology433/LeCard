@@ -120,7 +120,7 @@ const PageLoguin: React.FC = () => {
 
                     </div>
                 </div>
-            </div><footer><p>Copyright 2023 © | Up Technology by Rebeca Lopes</p></footer>
+            </div>
 
         </div>
     )

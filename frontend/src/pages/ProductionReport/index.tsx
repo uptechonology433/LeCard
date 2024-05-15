@@ -249,7 +249,7 @@ const PageProductionReport: React.FC = () => {
 
                 </div>
 
-                <DownloadFacilitators excelClick={() => onDownload()} textButton="Pesquisar" onClickButton={() => ProductionReportRequests()} csvData={ProductionReportData} />
+                <DownloadFacilitators excelClick={() => onDownload()} textButton="Pesquisar" onClickButton={() => ProductionReportRequests()} />
 
             </div>
 

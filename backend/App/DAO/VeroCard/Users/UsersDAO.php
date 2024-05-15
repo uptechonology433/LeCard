@@ -16,7 +16,7 @@ class UsersDAO extends Connection
     public function getUserByName(string $name): ?UsersModel // Alterado o nome do método para getUserByName
     {
         $statement = $this->pdo
-            ->prepare('SELECT id ,nome, email, senha , admin FROM usuarios_mega_vale WHERE nome = :nome;'); // Alterado para buscar pelo nome
+            ->prepare('SELECT id ,nome, email, senha , admin FROM usuarios_lecard WHERE nome = :nome;'); // Alterado para buscar pelo nome
 
         $statement->bindParam('nome', $name); // Alterado para bind pelo nome
 
